@@ -1,0 +1,6 @@
+@IoTDeviceDataIngestor.IngestionService_HostAddress = http://localhost:5017
+
+GET {{IoTDeviceDataIngestor.IngestionService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

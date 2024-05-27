@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34902.65
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceDataIngestor.ApiGateway", "IoTDeviceDataIngestor.ApiGateway\IoTDeviceDataIngestor.ApiGateway.csproj", "{9C5E671B-A4EC-4AEF-B15F-4714570DB38A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceDataIngestor.IngestionService", "IoTDeviceDataIngestor.IngestionService\IoTDeviceDataIngestor.IngestionService.csproj", "{3424C838-B6BD-4C82-8974-DE8CAA40463B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTDeviceDataIngestor.ProcessingService", "IoTDeviceDataIngestor.ProcessingService\IoTDeviceDataIngestor.ProcessingService.csproj", "{D3A4A2D4-7E32-4379-8DED-0C80BD3E9010}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C5E671B-A4EC-4AEF-B15F-4714570DB38A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5E671B-A4EC-4AEF-B15F-4714570DB38A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5E671B-A4EC-4AEF-B15F-4714570DB38A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5E671B-A4EC-4AEF-B15F-4714570DB38A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3424C838-B6BD-4C82-8974-DE8CAA40463B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3424C838-B6BD-4C82-8974-DE8CAA40463B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3424C838-B6BD-4C82-8974-DE8CAA40463B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3424C838-B6BD-4C82-8974-DE8CAA40463B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3A4A2D4-7E32-4379-8DED-0C80BD3E9010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3A4A2D4-7E32-4379-8DED-0C80BD3E9010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3A4A2D4-7E32-4379-8DED-0C80BD3E9010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3A4A2D4-7E32-4379-8DED-0C80BD3E9010}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC252F7E-A925-4DF0-8B22-5134F0509437}
+	EndGlobalSection
+EndGlobal
