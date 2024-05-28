@@ -1,5 +1,4 @@
 ﻿global using IoTDeviceDataIngestor.IngestionService.Utilities;
-global using IoTDeviceDataIngestor.IngestionService.Utilities.Exceptions;
 global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.Mvc.Filters;
 global using Newtonsoft.Json;

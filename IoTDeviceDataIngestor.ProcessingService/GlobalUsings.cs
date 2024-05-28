@@ -1,0 +1,10 @@
+﻿global using IoTDeviceDataIngestor.ProcessingService.Data;
+global using IoTDeviceDataIngestor.ProcessingService.Services;
+global using IoTDeviceDataIngestor.ProcessingService.Utilities;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using Microsoft.AspNetCore.SignalR;
+global using Newtonsoft.Json.Linq;
+global using RabbitMQ.Client;
+global using RabbitMQ.Client.Events;
+global using System.Text;

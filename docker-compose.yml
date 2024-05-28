@@ -1,5 +1,8 @@
 version: '3.4'
 
+networks:
+    backend:
+
 services:
   api-gateway:
     image: ${DOCKER_REGISTRY-}iotdevicedataingestorapigateway
@@ -12,15 +15,20 @@ services:
       - ingestionservice
       - processingservice
       - rabbitmq
+    networks:
+      - backend
 
   ingestionservice:
     image: ${DOCKER_REGISTRY-}iotdevicedataingestoringestionservice
     build:
       context: .
       dockerfile: IoTDeviceDataIngestor.IngestionService/Dockerfile
+    networks:
+      - backend
     depends_on:
       - rabbitmq
     environment:
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
       - QUEUE_NAME=${QUEUE_NAME}
       - RABBITMQ_HOSTNAME=${RABBITMQ_HOSTNAME}
 
@@ -29,8 +37,12 @@ services:
     build:
       context: .
       dockerfile: IoTDeviceDataIngestor.ProcessingService/Dockerfile
+    networks:
+      - backend
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+      - QUEUE_NAME=${QUEUE_NAME}
+      - RABBITMQ_HOSTNAME=${RABBITMQ_HOSTNAME}
     ports:
       - "5001:80"
     depends_on:
@@ -38,6 +50,8 @@ services:
 
   rabbitmq:
     image: "rabbitmq:3-management"
+    networks:
+      - backend
     ports:
       - "15672:15672" 
       - "5672:5672"  
