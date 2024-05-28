@@ -1,0 +1,43 @@
+version: '3.4'
+
+services:
+  api-gateway:
+    image: ${DOCKER_REGISTRY-}iotdevicedataingestorapigateway
+    build:
+      context: .
+      dockerfile: IoTDeviceDataIngestor.ApiGateway/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - ingestionservice
+      - processingservice
+      - rabbitmq
+
+  ingestionservice:
+    image: ${DOCKER_REGISTRY-}iotdevicedataingestoringestionservice
+    build:
+      context: .
+      dockerfile: IoTDeviceDataIngestor.IngestionService/Dockerfile
+    depends_on:
+      - rabbitmq
+    environment:
+      - QUEUE_NAME=${QUEUE_NAME}
+      - RABBITMQ_HOSTNAME=${RABBITMQ_HOSTNAME}
+
+  processingservice:
+    image: ${DOCKER_REGISTRY-}iotdevicedataingestorprocessingservice
+    build:
+      context: .
+      dockerfile: IoTDeviceDataIngestor.ProcessingService/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5001:80"
+    depends_on:
+      - rabbitmq
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672" 
+      - "5672:5672"  
