@@ -3,15 +3,31 @@
     //IngestData API
     {
       "UpstreamPathTemplate": "/api/IngestData",
-      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHttpMethod": [ "POST" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "authenticationwebapi",
+          "Host": "ingestionservice",
           "Port": 80
         }
       ],
       "DownstreamPathTemplate": "/api/IngestData"
+    },
+    //ProcessedData API
+    {
+      "DownstreamPathTemplate": "/dataHub",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "processingservice",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/dataHub",
+      "UpstreamHttpMethod": [ "GET" ]
     }
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "${API_GATEWAY_HOST}"
+  }
 }
