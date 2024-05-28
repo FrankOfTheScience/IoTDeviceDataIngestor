@@ -1,0 +1,17 @@
+{
+  "Routes": [
+    //IngestData API
+    {
+      "UpstreamPathTemplate": "/api/IngestData",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authenticationwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/IngestData"
+    }
+  ]
+}

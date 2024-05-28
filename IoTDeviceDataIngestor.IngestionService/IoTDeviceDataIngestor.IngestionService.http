@@ -1,6 +1,5 @@
 @IoTDeviceDataIngestor.IngestionService_HostAddress = http://localhost:5017
 
-GET {{IoTDeviceDataIngestor.IngestionService_HostAddress}}/weatherforecast/
+POST {{IoTDeviceDataIngestor.IngestionService_HostAddress}}/IngestData/
 Accept: application/json
-
 ###
